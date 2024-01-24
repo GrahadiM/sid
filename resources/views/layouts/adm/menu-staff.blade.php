@@ -18,6 +18,107 @@
                     <p>{{ __('Menu Pengumuman') }}</p>
                 </a>
             </li>
+            <li class="nav-item {{ Request::is('staff/penduduk*') || Request::is('staff/kartu_keluarga*') ? 'menu-is-opening menu-open' : '' }}">
+                <a href="#" class="nav-link {{ Request::is('staff/kartu_keluarga*') ? 'active' : '' }}">
+                    <i class="nav-icon fas fa-clipboard-list"></i>
+                    <p>{{ __('Menu Data') }} <i class="right fas fa-angle-left"></i></p>
+                </a>
+                <ul class="nav nav-treeview">
+                    <li class="nav-item">
+                        <a href="{{ route('staff.penduduk.index') }}"
+                            class="nav-link {{ Request::is('staff/penduduk*') ? 'active' : '' }}">
+                            <i class="fas fa-angle-right nav-icon"></i>
+                            <p>{{ __('Data Penduduk') }}</p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="{{ route('staff.kartu_keluarga.index') }}"
+                            class="nav-link {{ Request::is('staff/kartu_keluarga*') ? 'active' : '' }}">
+                            <i class="fas fa-angle-right nav-icon"></i>
+                            <p>{{ __('Data Kartu Keluarga') }}</p>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+            <li class="nav-item {{ Request::is('staff/data_lahir*') || Request::is('staff/data_meninggal*') || Request::is('staff/data_pendatang*') || Request::is('staff/data_pindah*') ? 'menu-is-opening menu-open' : '' }}">
+                <a href="#" class="nav-link {{ Request::is('staff/messages*') ? 'active' : '' }}">
+                    <i class="nav-icon fas fa-clipboard-list"></i>
+                    <p>{{ __('Menu Siklus Penduduk') }} <i class="right fas fa-angle-left"></i></p>
+                </a>
+                <ul class="nav nav-treeview">
+                    <li class="nav-item">
+                        <a href="{{ route('staff.data_lahir.index') }}"
+                            class="nav-link {{ Request::is('staff/data_lahir*') ? 'active' : '' }}">
+                            <i class="fas fa-angle-right nav-icon"></i>
+                            <p>{{ __('Data Lahir') }}</p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="{{ route('staff.data_meninggal.index') }}"
+                            class="nav-link {{ Request::is('staff/data_meninggal*') ? 'active' : '' }}">
+                            <i class="fas fa-angle-right nav-icon"></i>
+                            <p>{{ __('Data Meninggal') }}</p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="{{ route('staff.data_pendatang.index') }}"
+                            class="nav-link {{ Request::is('staff/data_pendatang*') ? 'active' : '' }}">
+                            <i class="fas fa-angle-right nav-icon"></i>
+                            <p>{{ __('Data Pendatang') }}</p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="{{ route('staff.data_pindah.index') }}"
+                            class="nav-link {{ Request::is('staff/data_pindah*') ? 'active' : '' }}">
+                            <i class="fas fa-angle-right nav-icon"></i>
+                            <p>{{ __('Data Pindah') }}</p>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+            <li class="nav-item {{ Request::is('staff/suket_domisili*') || Request::is('staff/suket_kelahiran*') || Request::is('staff/suket_kematian*') || Request::is('staff/suket_pendatang*') || Request::is('staff/suket_pindah*') ? 'menu-is-opening menu-open' : '' }}">
+                <a href="#" class="nav-link {{ Request::is('staff/messages*') ? 'active' : '' }}">
+                    <i class="nav-icon fas fa-clipboard-list"></i>
+                    <p>{{ __('Menu Surat') }} <i class="right fas fa-angle-left"></i></p>
+                </a>
+                <ul class="nav nav-treeview">
+                    <li class="nav-item">
+                        <a href="{{ route('staff.suket_domisili.index') }}"
+                            class="nav-link {{ Request::is('staff/suket_domisili*') ? 'active' : '' }}">
+                            <i class="fas fa-angle-right nav-icon"></i>
+                            <p>{{ __('Su-Ket Domisili') }}</p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="{{ route('staff.suket_kelahiran.index') }}"
+                            class="nav-link {{ Request::is('staff/suket_kelahiran*') ? 'active' : '' }}">
+                            <i class="fas fa-angle-right nav-icon"></i>
+                            <p>{{ __('Su-Ket Kelahiran') }}</p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="{{ route('staff.suket_kematian.index') }}"
+                            class="nav-link {{ Request::is('staff/suket_kematian*') ? 'active' : '' }}">
+                            <i class="fas fa-angle-right nav-icon"></i>
+                            <p>{{ __('Su-Ket Kematian') }}</p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="{{ route('staff.suket_pendatang.index') }}"
+                            class="nav-link {{ Request::is('staff/suket_pendatang*') ? 'active' : '' }}">
+                            <i class="fas fa-angle-right nav-icon"></i>
+                            <p>{{ __('Su-Ket Pendatang') }}</p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="{{ route('staff.suket_pindah.index') }}"
+                            class="nav-link {{ Request::is('staff/suket_pindah*') ? 'active' : '' }}">
+                            <i class="fas fa-angle-right nav-icon"></i>
+                            <p>{{ __('Su-Ket Pindah') }}</p>
+                        </a>
+                    </li>
+                </ul>
+            </li>
             <li class="nav-item {{ Request::is('staff/histories*') || Request::is('staff/messages*') ? 'menu-is-opening menu-open' : '' }}">
                 <a href="#" class="nav-link {{ Request::is('staff/messages*') ? 'active' : '' }}">
                     <i class="nav-icon fas fa-clipboard-list"></i>

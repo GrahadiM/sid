@@ -20,6 +20,12 @@ class DatabaseSeeder extends Seeder
             WebsiteTableSeeder::class,
             AnnouncementSeeder::class,
             MessageSeeder::class,
+            PendudukSeeder::class,
+            KartuKeluargaSeeder::class,
+            LahirSeeder::class,
+            MeninggalSeeder::class,
+            PendatangSeeder::class,
+            PindahSeeder::class,
         ]);
     }
 }
