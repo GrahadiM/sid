@@ -7,6 +7,11 @@ use App\Models\Message;
 use App\Models\Announcement;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Models\KartuKeluarga;
+use App\Models\Meninggal;
+use App\Models\Pendatang;
+use App\Models\Penduduk;
+use App\Models\Pindah;
 
 class DashboardController extends Controller
 {
@@ -35,6 +40,14 @@ class DashboardController extends Controller
         $data['announcements']  = Announcement::count();
         $data['critics']        = Message::where('category', 'kritik')->count();
         $data['recommendation'] = Message::where('category', 'saran')->count();
+        $data['penduduk']       = Penduduk::count();
+        $data['kk']             = KartuKeluarga::count();
+        $data['lk']             = Penduduk::count();
+        $data['pr']             = Penduduk::count();
+        $data['lahir']          = Penduduk::count();
+        $data['meninggal']      = Meninggal::count();
+        $data['pendatang']      = Pendatang::count();
+        $data['pindah']         = Pindah::count();
         return view('staff.dashboard.index', $data);
     }
 }

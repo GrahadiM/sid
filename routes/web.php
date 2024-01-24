@@ -42,8 +42,8 @@ Route::middleware(['auth'])->prefix('staff/')->name('staff.')->group(function ()
     Route::resource('announcement', App\Http\Controllers\Staff\AnnouncementController::class);
     Route::resource('messages', App\Http\Controllers\Staff\MessageController::class);
     Route::resource('penduduk', App\Http\Controllers\Staff\PendudukController::class);
-    Route::resource('anggota', App\Http\Controllers\Staff\AnggotaKeluargaController::class);
     Route::resource('kartu_keluarga', App\Http\Controllers\Staff\KartuKeluargaController::class);
+    Route::resource('anggota', App\Http\Controllers\Staff\AnggotaKeluargaController::class);
     Route::resource('data_lahir', App\Http\Controllers\Staff\LahirController::class);
     Route::resource('data_meninggal', App\Http\Controllers\Staff\MeninggalController::class);
     Route::resource('data_pendatang', App\Http\Controllers\Staff\PendatangController::class);

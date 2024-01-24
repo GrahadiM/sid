@@ -75,6 +75,126 @@
                 </a>
             </div>
         </div>
+        <div class="col-lg-3 col-6">
+            <!-- small card -->
+            <div class="small-box bg-primary">
+                <div class="inner">
+                    <h3>{{ $penduduk }}</h3>
+                    <p>Penduduk</p>
+                </div>
+                <div class="icon">
+                    <i class="far fa-address-card"></i>
+                </div>
+                <a href="{{ route('staff.penduduk.index') }}" class="small-box-footer">
+                    Tampilkan Data <i class="fas fa-arrow-circle-right ml-1"></i>
+                </a>
+            </div>
+        </div>
+        <div class="col-lg-3 col-6">
+            <!-- small card -->
+            <div class="small-box bg-primary">
+                <div class="inner">
+                    <h3>{{ $kk }}</h3>
+                    <p>Kartu Keluarga</p>
+                </div>
+                <div class="icon">
+                    <i class="far fa-address-card"></i>
+                </div>
+                <a href="{{ route('staff.kartu_keluarga.index') }}" class="small-box-footer">
+                    Tampilkan Data <i class="fas fa-arrow-circle-right ml-1"></i>
+                </a>
+            </div>
+        </div>
+        <div class="col-lg-3 col-6">
+            <!-- small card -->
+            <div class="small-box bg-primary">
+                <div class="inner">
+                    <h3>{{ $lk }}</h3>
+                    <p>Laki-laki</p>
+                </div>
+                <div class="icon">
+                    <i class="far fa-user"></i>
+                </div>
+                <a href="{{ route('staff.penduduk.index') }}" class="small-box-footer">
+                    Tampilkan Data <i class="fas fa-arrow-circle-right ml-1"></i>
+                </a>
+            </div>
+        </div>
+        <div class="col-lg-3 col-6">
+            <!-- small card -->
+            <div class="small-box bg-primary">
+                <div class="inner">
+                    <h3>{{ $pr }}</h3>
+                    <p>Perempuan</p>
+                </div>
+                <div class="icon">
+                    <i class="far fa-user"></i>
+                </div>
+                <a href="{{ route('staff.penduduk.index') }}" class="small-box-footer">
+                    Tampilkan Data <i class="fas fa-arrow-circle-right ml-1"></i>
+                </a>
+            </div>
+        </div>
+        <div class="col-lg-3 col-6">
+            <!-- small card -->
+            <div class="small-box bg-primary">
+                <div class="inner">
+                    <h3>{{ $lahir }}</h3>
+                    <p>Lahir</p>
+                </div>
+                <div class="icon">
+                    <i class="far fa-clipboard-list"></i>
+                </div>
+                <a href="{{ route('staff.data_lahir.index') }}" class="small-box-footer">
+                    Tampilkan Data <i class="fas fa-arrow-circle-right ml-1"></i>
+                </a>
+            </div>
+        </div>
+        <div class="col-lg-3 col-6">
+            <!-- small card -->
+            <div class="small-box bg-primary">
+                <div class="inner">
+                    <h3>{{ $meninggal }}</h3>
+                    <p>Meninggal</p>
+                </div>
+                <div class="icon">
+                    <i class="far fa-clipboard-list"></i>
+                </div>
+                <a href="{{ route('staff.data_meninggal.index') }}" class="small-box-footer">
+                    Tampilkan Data <i class="fas fa-arrow-circle-right ml-1"></i>
+                </a>
+            </div>
+        </div>
+        <div class="col-lg-3 col-6">
+            <!-- small card -->
+            <div class="small-box bg-primary">
+                <div class="inner">
+                    <h3>{{ $pendatang }}</h3>
+                    <p>Pendatang</p>
+                </div>
+                <div class="icon">
+                    <i class="far fa-clipboard-list"></i>
+                </div>
+                <a href="{{ route('staff.data_pendatang.index') }}" class="small-box-footer">
+                    Tampilkan Data <i class="fas fa-arrow-circle-right ml-1"></i>
+                </a>
+            </div>
+        </div>
+        <div class="col-lg-3 col-6">
+            <!-- small card -->
+            <div class="small-box bg-primary">
+                <div class="inner">
+                    <h3>{{ $pindah }}</h3>
+                    <p>Pindah</p>
+                </div>
+                <div class="icon">
+                    <i class="far fa-clipboard-list"></i>
+                </div>
+                <a href="{{ route('staff.data_pindah.index') }}" class="small-box-footer">
+                    Tampilkan Data <i class="fas fa-arrow-circle-right ml-1"></i>
+                </a>
+            </div>
+        </div>
     </div>
 @endsection
 
