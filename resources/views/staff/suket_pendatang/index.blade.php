@@ -26,7 +26,7 @@
 					<select name="penduduk_id" id="penduduk_id" class="form-control select2 select2bs4" required>
 						<option value="" selected>-- Pilih Data --</option>
                         @forelse ($data as $item)
-    						<option value="{{ $item->id }}">{{ $item->name }}</option>
+                            <option value="{{ $item->penduduk->id }}">{{ $item->penduduk->name }}</option>
                         @empty
                             <option value="" selected>Data Tidak Tersedia</option>
                         @endforelse

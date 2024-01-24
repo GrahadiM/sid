@@ -5,6 +5,9 @@ namespace App\Http\Controllers\Staff;
 use App\Models\Penduduk;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Models\Meninggal;
+use App\Models\Pendatang;
+use App\Models\Pindah;
 
 class SuratKeteranganController extends Controller
 {
@@ -25,21 +28,21 @@ class SuratKeteranganController extends Controller
     public function suket_kematian()
     {
         $data['title']  = 'Su-Ket Kematian';
-        $data['data']   = Penduduk::all();
+        $data['data']   = Meninggal::all();
         return view('staff.suket_kematian.index', $data);
     }
 
     public function suket_pendatang()
     {
         $data['title']  = 'Su-Ket Pendatang';
-        $data['data']   = Penduduk::all();
+        $data['data']   = Pendatang::all();
         return view('staff.suket_pendatang.index', $data);
     }
 
     public function suket_pindah()
     {
         $data['title']  = 'Su-Ket Pindah';
-        $data['data']   = Penduduk::all();
+        $data['data']   = Pindah::all();
         return view('staff.suket_pindah.index', $data);
     }
 
