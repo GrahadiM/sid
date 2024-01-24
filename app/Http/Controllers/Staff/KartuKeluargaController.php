@@ -7,6 +7,7 @@ use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use App\Models\KartuKeluarga;
 use App\Http\Controllers\Controller;
+use App\Models\Keluarga;
 
 class KartuKeluargaController extends Controller
 {
@@ -42,7 +43,7 @@ class KartuKeluargaController extends Controller
      */
     public function store(Request $request)
     {
-        $data = new KartuKeluarga;
+        $data               = new KartuKeluarga;
         $data->no           = (int) $request->no;
         $data->dusun        = Str::ucfirst($request->dusun);
         $data->desa         = Str::ucfirst($request->desa);
@@ -51,6 +52,12 @@ class KartuKeluargaController extends Controller
         $data->prov         = Str::ucfirst($request->prov);
         $data->penduduk_id  = $request->penduduk_id;
         $data->save();
+
+        $anggota                = new Keluarga;
+        $anggota->kk_id         = $data->id;
+        $anggota->penduduk_id   = $request->penduduk_id;
+        $anggota->hubungan      = 'Kepala Keluarga';
+        $anggota->save();
 
         return back()->with('succes','Data Berhasil di Tambahkan!');
     }
@@ -87,6 +94,10 @@ class KartuKeluargaController extends Controller
     public function update(Request $request, $id)
     {
         $data               = KartuKeluarga::find($id);
+
+        $keluarga = Keluarga::where('kk_id', $id)->first();
+        $keluarga->delete();
+
         $data->no           = (int) $request->no;
         $data->dusun        = Str::ucfirst($request->dusun);
         $data->desa         = Str::ucfirst($request->desa);
@@ -95,6 +106,12 @@ class KartuKeluargaController extends Controller
         $data->prov         = Str::ucfirst($request->prov);
         $data->penduduk_id  = $request->penduduk_id;
         $data->save();
+
+        $anggota                = new Keluarga;
+        $anggota->kk_id         = $data->id;
+        $anggota->penduduk_id   = $request->penduduk_id;
+        $anggota->hubungan      = 'Kepala Keluarga';
+        $anggota->save();
 
         return back()->with('succes','Data Berhasil di Ubah!');
     }

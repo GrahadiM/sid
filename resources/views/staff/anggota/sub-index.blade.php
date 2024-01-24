@@ -30,13 +30,11 @@
                 <tr>
                     <th>No Kartu Keluarga</th>
                     <th>Kepala Keluarga</th>
-                    <th>Alamat</th>
-                    {{-- <th>Desa</th>
+                    <th>Desa</th>
                     <th>Dusun</th>
                     <th>Kecamatan</th>
                     <th>Kabupaten</th>
-                    <th>Provinsi</th> --}}
-                    <th>Anggota KK</th>
+                    <th>Provinsi</th>
                     <th>Aksi</th>
                 </tr>
             </thead>
@@ -45,14 +43,11 @@
                 <tr>
                     <td>{{ Str::upper($dt->no) }}</td>
                     <td>{{ Str::upper($dt->penduduk->name) }}</td>
-                    <td>{{ Str::upper($dt->desa).', '.Str::upper($dt->dusun) }}</td>
-                    <td class="text-center">
-                        <div>
-                            <a href="{{ route('staff.anggota.show', $dt->id) }}" class="btn btn-success btn-sm">
-                                <i class="fas fa-users"></i>
-                            </a>
-                        </div>
-                    </td>
+                    <td>{{ Str::upper($dt->desa) }}</td>
+                    <td>{{ Str::upper($dt->dusun) }}</td>
+                    <td>{{ Str::upper($dt->kec) }}</td>
+                    <td>{{ Str::upper($dt->kab) }}</td>
+                    <td>{{ Str::upper($dt->prov) }}</td>
                     <td class="row text-center">
                         <div class="col">
                             <a class="btn btn-info btn-sm" data-toggle="modal" data-target="#showDataModal{{ $dt->id }}">
@@ -76,58 +71,6 @@
                     </td>
                 </tr>
 
-                <!-- Modal Show Data -->
-                <div class="modal fade" id="showDataModal{{ $dt->id }}" tabindex="-1" role="dialog" aria-labelledby="showDataModalLabel{{ $dt->id }}" aria-hidden="true">
-                    <div class="modal-dialog" role="document">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <h5 class="modal-title" id="showDataModalLabel{{ $dt->id }}">Detail Data</h5>
-                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                    <span aria-hidden="true">&times;</span>
-                                </button>
-                            </div>
-                            <div class="modal-body">
-                                <!-- Form edit data di sini -->
-                                <form action="#" method="POST">
-                                    <div class="form-group">
-                                        <label for="no">Nomer KK</label>
-                                        <input type="number" name="no" class="form-control" value="{{ $dt->no }}" disabled>
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="dusun">Dusun</label>
-                                        <input type="text" name="dusun" class="form-control" value="{{ $dt->dusun }}" disabled>
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="desa">Desa</label>
-                                        <input type="text" name="desa" class="form-control" value="{{ $dt->desa }}" disabled>
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="kec">Kecamatan</label>
-                                        <input type="text" name="kec" class="form-control" value="{{ $dt->kec }}" disabled>
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="kab">Kabupaten</label>
-                                        <input type="text" name="kab" class="form-control" value="{{ $dt->kab }}" disabled>
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="prov">Provinsi</label>
-                                        <input type="text" name="prov" class="form-control" value="{{ $dt->prov }}" disabled>
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="penduduk_id">Kepala Keluarga</label>
-                                        <select name="penduduk_id" id="penduduk_id" class="form-control" disabled>
-                                            <option value="{{ $dt->penduduk_id }}">{{ $dt->penduduk->name }}</option>
-                                            @foreach ($penduduk as $item)
-                                                <option value="{{ $item->id }}">{{ $item->name }}</option>
-                                            @endforeach
-                                        </select>
-                                    </div>
-                                </form>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
                 <!-- Modal Edit Data -->
                 <div class="modal fade" id="editDataModal{{ $dt->id }}" tabindex="-1" role="dialog" aria-labelledby="editDataModalLabel{{ $dt->id }}" aria-hidden="true">
                     <div class="modal-dialog" role="document">
@@ -145,36 +88,35 @@
                                     @csrf
 
                                     <div class="form-group">
-                                        <label for="no">Nomer KK</label>
-                                        <input type="number" name="no" class="form-control" value="{{ $dt->no }}" required>
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="dusun">Dusun</label>
-                                        <input type="text" name="dusun" class="form-control" value="{{ $dt->dusun }}" required>
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="desa">Desa</label>
-                                        <input type="text" name="desa" class="form-control" value="{{ $dt->desa }}" required>
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="kec">Kecamatan</label>
-                                        <input type="text" name="kec" class="form-control" value="{{ $dt->kec }}" required>
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="kab">Kabupaten</label>
-                                        <input type="text" name="kab" class="form-control" value="{{ $dt->kab }}" required>
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="prov">Provinsi</label>
-                                        <input type="text" name="prov" class="form-control" value="{{ $dt->prov }}" required>
+                                        <label for="kk_id">Kartu Keluarga</label>
+                                        <select name="kk_id" id="kk_id" class="form-control" required>
+                                            <option selected>-- Pilih Kartu Keluarga --</option>
+                                            @foreach ($kk as $item)
+                                                <option value="{{ $item->penduduk->id }}">{{ $item->penduduk->name }}</option>
+                                            @endforeach
+                                        </select>
                                     </div>
                                     <div class="form-group">
                                         <label for="penduduk_id">Kepala Keluarga</label>
                                         <select name="penduduk_id" id="penduduk_id" class="form-control" required>
-                                            <option value="{{ $dt->penduduk_id }}">{{ $dt->penduduk->name }}</option>
+                                            <option selected>-- Pilih Kepala Keluarga --</option>
                                             @foreach ($penduduk as $item)
                                                 <option value="{{ $item->id }}">{{ $item->name }}</option>
                                             @endforeach
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="hubungan">Hubungan</label>
+                                        <select name="hubungan" id="hubungan" class="form-control" required>
+                                            <option selected>-- Pilih Hubungan --</option>
+                                            <option value="Kepala Keluarga">Kepala Keluarga</option>
+                                            <option value="Istri">Istri</option>
+                                            <option value="Anak">Anak</option>
+                                            <option value="Orang Tua">Orang Tua</option>
+                                            <option value="Mertua">Mertua</option>
+                                            <option value="Menantu">Menantu</option>
+                                            <option value="Cucu">Cucu</option>
+                                            <option value="Famili">Famili Lain</option>
                                         </select>
                                     </div>
 
@@ -193,13 +135,11 @@
                 <tr>
                     <th>No Kartu Keluarga</th>
                     <th>Kepala Keluarga</th>
-                    <th>Alamat</th>
-                    {{-- <th>Desa</th>
+                    <th>Desa</th>
                     <th>Dusun</th>
                     <th>Kecamatan</th>
                     <th>Kabupaten</th>
-                    <th>Provinsi</th> --}}
-                    <th>Anggota KK</th>
+                    <th>Provinsi</th>
                     <th>Aksi</th>
                 </tr>
             </tfoot>
@@ -223,36 +163,35 @@
                     @csrf
 
                     <div class="form-group">
-                        <label for="no">Nomer KK</label>
-                        <input type="number" name="no" class="form-control" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="dusun">Dusun</label>
-                        <input type="text" name="dusun" class="form-control" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="desa">Desa</label>
-                        <input type="text" name="desa" class="form-control" value="Aek Nabara" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="kec">Kecamatan</label>
-                        <input type="text" name="kec" class="form-control" value="Simangumban" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="kab">Kabupaten</label>
-                        <input type="text" name="kab" class="form-control" value="Tapanuli Utara" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="prov">Provinsi</label>
-                        <input type="text" name="prov" class="form-control" value="Sumatera Utara" required>
+                        <label for="kk_id">Kartu Keluarga</label>
+                        <select name="kk_id" id="kk_id" class="form-control" required>
+                            <option selected>-- Pilih Kartu Keluarga --</option>
+                            @foreach ($kk as $item)
+                                <option value="{{ $item->penduduk->id }}">{{ $item->penduduk->name }}</option>
+                            @endforeach
+                        </select>
                     </div>
                     <div class="form-group">
                         <label for="penduduk_id">Kepala Keluarga</label>
                         <select name="penduduk_id" id="penduduk_id" class="form-control" required>
-                            <option selected>-- Pilih --</option>
+                            <option selected>-- Pilih Kepala Keluarga --</option>
                             @foreach ($penduduk as $item)
                                 <option value="{{ $item->id }}">{{ $item->name }}</option>
                             @endforeach
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="hubungan">Hubungan</label>
+                        <select name="hubungan" id="hubungan" class="form-control" required>
+                            <option selected>-- Pilih Hubungan --</option>
+                            <option value="Kepala Keluarga">Kepala Keluarga</option>
+                            <option value="Istri">Istri</option>
+                            <option value="Anak">Anak</option>
+                            <option value="Orang Tua">Orang Tua</option>
+                            <option value="Mertua">Mertua</option>
+                            <option value="Menantu">Menantu</option>
+                            <option value="Cucu">Cucu</option>
+                            <option value="Famili">Famili Lain</option>
                         </select>
                     </div>
 

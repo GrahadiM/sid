@@ -22,6 +22,7 @@ class DatabaseSeeder extends Seeder
             MessageSeeder::class,
             PendudukSeeder::class,
             KartuKeluargaSeeder::class,
+            KeluargaSeeder::class,
             LahirSeeder::class,
             MeninggalSeeder::class,
             PendatangSeeder::class,
