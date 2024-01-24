@@ -18,24 +18,28 @@ class SuratKeteranganController extends Controller
     public function suket_kelahiran()
     {
         $data['title']  = 'Su-Ket Kelahiran';
+        $data['data']   = Penduduk::all();
         return view('staff.suket_kelahiran.index', $data);
     }
 
     public function suket_kematian()
     {
         $data['title']  = 'Su-Ket Kematian';
+        $data['data']   = Penduduk::all();
         return view('staff.suket_kematian.index', $data);
     }
 
     public function suket_pendatang()
     {
         $data['title']  = 'Su-Ket Pendatang';
+        $data['data']   = Penduduk::all();
         return view('staff.suket_pendatang.index', $data);
     }
 
     public function suket_pindah()
     {
         $data['title']  = 'Su-Ket Pindah';
+        $data['data']   = Penduduk::all();
         return view('staff.suket_pindah.index', $data);
     }
 

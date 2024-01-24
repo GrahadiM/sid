@@ -25,9 +25,11 @@
 				<div class="col-sm-6">
 					<select name="penduduk_id" id="penduduk_id" class="form-control select2 select2bs4" required>
 						<option value="" selected>-- Pilih Data --</option>
-                        @foreach ($data as $item)
+                        @forelse ($data as $item)
     						<option value="{{ $item->id }}">{{ $item->name }}</option>
-                        @endforeach
+                        @empty
+						<option value="" selected>Data Tidak Tersedia</option>
+                        @endforelse
                     </select>
 				</div>
 			</div>
