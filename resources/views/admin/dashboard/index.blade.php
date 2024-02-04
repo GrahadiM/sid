@@ -19,24 +19,26 @@
                     <h3 class="text-center"><u>{{ Str::upper('Tentang Desa') }}</u></h3>
                 </div>
                 <div class="card-body">
-                    <div class="row">
+                    <div class="row mb-3">
+                        <div class="col-md-1"></div>
                         <div class="col-md-2">
                             <img src="{{ asset('image/logo.jpg') }}" alt="Logo Desa" class="img-fluid">
                         </div>
-                        <div class="col-md-8">
+                        <div class="col-md-6">
                             <h5 class="text-center font-weight-bold">Desa Aek Nabara, Kec. Simangumban, Kab. Tapanuli Utara</h5>
-                            <p>
-                                Desa Aek Nabara adalah nama suatu wilayah dikecamatan Simangumban kabupaten tapanuli utara, menurut
-                                beberapa tokoh masyarakat Desa Aek Nabara bahwa Desa tersebut terbentuk pada tahun 1952 dan pada
-                                saat itu jumlah penduduk ± 96 KK, dan pada saat ini jumlah penduduk desa Aek Nabara terdapat 320 KK.
-                                Adapun nama desa tersebut diputuskan berdasarkan musyawarah yang dipimpin oleh kepala desa dan
-                                diambil nama Desa Aek Nabara.
-                            </p>
                         </div>
                         <div class="col-md-2">
                             <img src="{{ asset('image/wilayah.jpg') }}" alt="Wilayah Desa" class="img-fluid">
                         </div>
+                        <div class="col-md-1"></div>
                     </div>
+                    <p>
+                        Desa Aek Nabara adalah nama suatu wilayah dikecamatan Simangumban kabupaten tapanuli utara, menurut
+                        beberapa tokoh masyarakat Desa Aek Nabara bahwa Desa tersebut terbentuk pada tahun 1952 dan pada
+                        saat itu jumlah penduduk ± 96 KK, dan pada saat ini jumlah penduduk desa Aek Nabara terdapat 320 KK.
+                        Adapun nama desa tersebut diputuskan berdasarkan musyawarah yang dipimpin oleh kepala desa dan
+                        diambil nama Desa Aek Nabara.
+                    </p>
                 </div>
             </div>
         </div>
