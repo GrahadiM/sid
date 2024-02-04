@@ -21,7 +21,22 @@
                         <a href="{{ route('user.messages.index') }}"
                             class="nav-link {{ Request::is('user/messages*') ? 'active' : '' }}">
                             <i class="fas fa-angle-right nav-icon"></i>
-                            <p>{{ __('Menu Riwayat') }}</p>
+                            <p>{{ __('Riwayat Pesan') }}</p>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+            <li class="nav-item {{ Request::is('user/submission_letter*') ? 'menu-is-opening menu-open' : '' }}">
+                <a href="#" class="nav-link {{ Request::is('user/submission_letter*') ? 'active' : '' }}">
+                    <i class="nav-icon fas fa-clipboard-list"></i>
+                    <p>{{ __('Menu Pengajuan Surat') }} <i class="right fas fa-angle-left"></i></p>
+                </a>
+                <ul class="nav nav-treeview">
+                    <li class="nav-item">
+                        <a href="{{ route('user.submission_letter.index') }}"
+                            class="nav-link {{ Request::is('user/submission_letter*') ? 'active' : '' }}">
+                            <i class="fas fa-angle-right nav-icon"></i>
+                            <p>{{ __('Riwayat Surat') }}</p>
                         </a>
                     </li>
                 </ul>

@@ -7,12 +7,10 @@
 
 <body>
     <center>
-
         <h2>PEMERINTAH KABUPATEN PERCONTOHAN</h2>
-        <h3>
-            KECAMATAN PERCONTOHAN
-            <br>
-            DESA PERCONTOHAN
+        <img src="dist/img/izin.png" width="200">
+        <h3>KECAMATAN PERCONTOHAN
+            <br>DESA PERCONTOHAN
         </h3>
         <p>________________________________________________________________________</p>
 
@@ -20,10 +18,10 @@
 
     <center>
         <h4>
-            <u>SURAT KETARANGAN DOMISILI</u>
+            <u>SURAT KETARANGAN KELAHIRAN</u>
         </h4>
         <h4>
-            No Surat : ...../Ket.Domisili/...../.....
+            No Surat : ...../Ket.Kelahiran/...../.....
         </h4>
     </center>
     <p>
@@ -33,14 +31,14 @@
     <table>
         <tbody>
             <tr>
-                <td>NIK</td>
-                <td>:</td>
-                <td>{{ (int) $data->nik }}</td>
-            </tr>
-            <tr>
                 <td>Nama</td>
                 <td>:</td>
                 <td>{{ Str::ucfirst($data->name) }}</td>
+            </tr>
+            <tr>
+                <td>Jenis Kelamin</td>
+                <td>:</td>
+                <td>{{ $data->gender == 'LK' ? 'Laki-Laki' : 'Perempuan' }}</td>
             </tr>
             <tr>
                 <td>Tempat Tanggal Lahir</td>
@@ -49,8 +47,8 @@
             </tr>
         </tbody>
     </table>
-    <p>Adalah benar-benar warga Desa ......., Kecamatan ..........., Kabupuaten ..............</P>
-    <p>Demikian Surat ini dibuat, agar dapat digunakan sebagai mana mestinya.</P>
+    <p>Telah benar-benar Lahir di Desa Aek Nabara, Kecamatan Simangumban, Kabupuaten Tapanuli Utara</P>
+    <p>Demikian Surat ini dibuat, agar dapat digunakan sebagaimana mestinya.</P>
     <br>
     <br>
     <br>

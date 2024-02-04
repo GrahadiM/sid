@@ -76,6 +76,21 @@
                     </li>
                 </ul>
             </li>
+            <li class="nav-item {{ Request::is('staff/submission_letter*') ? 'menu-is-opening menu-open' : '' }}">
+                <a href="#" class="nav-link {{ Request::is('staff/submission_letter*') ? 'active' : '' }}">
+                    <i class="nav-icon fas fa-clipboard-list"></i>
+                    <p>{{ __('Menu Pengajuan Surat') }} <i class="right fas fa-angle-left"></i></p>
+                </a>
+                <ul class="nav nav-treeview">
+                    <li class="nav-item">
+                        <a href="{{ route('staff.submission_letter.index') }}"
+                            class="nav-link {{ Request::is('staff/submission_letter*') ? 'active' : '' }}">
+                            <i class="fas fa-angle-right nav-icon"></i>
+                            <p>{{ __('Riwayat Surat') }}</p>
+                        </a>
+                    </li>
+                </ul>
+            </li>
             <li class="nav-item {{ Request::is('staff/suket_domisili*') || Request::is('staff/suket_kelahiran*') || Request::is('staff/suket_kematian*') || Request::is('staff/suket_pendatang*') || Request::is('staff/suket_pindah*') ? 'menu-is-opening menu-open' : '' }}">
                 <a href="#" class="nav-link {{ Request::is('staff/messages*') ? 'active' : '' }}">
                     <i class="nav-icon fas fa-clipboard-list"></i>
@@ -114,7 +129,7 @@
                         <a href="{{ route('staff.suket_pindah.index') }}"
                             class="nav-link {{ Request::is('staff/suket_pindah*') ? 'active' : '' }}">
                             <i class="fas fa-angle-right nav-icon"></i>
-                            <p>{{ __('Su-Ket Pindah') }}</p>
+                            <p>{{ __('Su-Ket Pindahan') }}</p>
                         </a>
                     </li>
                 </ul>

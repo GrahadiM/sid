@@ -2,12 +2,13 @@
 
 namespace App\Http\Controllers\Staff;
 
+use App\Models\Pindah;
 use App\Models\Penduduk;
-use Illuminate\Http\Request;
-use App\Http\Controllers\Controller;
 use App\Models\Meninggal;
 use App\Models\Pendatang;
-use App\Models\Pindah;
+use Illuminate\Http\Request;
+use App\Models\PengajuanSurat;
+use App\Http\Controllers\Controller;
 
 class SuratKeteranganController extends Controller
 {
@@ -79,5 +80,24 @@ class SuratKeteranganController extends Controller
         $data['title']  = 'Su-Ket Pindah';
         $data['data']   = Penduduk::find($request->penduduk_id);
         return view('staff.cetak_suket_pindah.index', $data);
+    }
+
+    public function cetak_surat_keterangan(Request $request)
+    {
+        $data['title']  = 'Su-Ket Pindah';
+        $data['data']   = PengajuanSurat::find($request->id);
+        if ($request->category == 'Domisili') {
+            return view('staff.cetak_suket_domisili.index', $data);
+        } elseif ($request->category == 'Kelahiran') {
+            return view('staff.cetak_suket_kelahiran.index', $data);
+        } elseif ($request->category == 'Kematian') {
+            return view('staff.cetak_suket_kematian.index', $data);
+        } elseif ($request->category == 'Pendatang') {
+            return view('staff.cetak_suket_pendatang.index', $data);
+        } elseif ($request->category == 'Pindahan') {
+            return view('staff.cetak_suket_pindah.index', $data);
+        } else {
+            return redirect()->route('staff.submission_letter.index');
+        }
     }
 }

@@ -68,9 +68,9 @@ class UsersTableSeeder extends Seeder
         $staff->assignRole([$roleStaff->id]);
 
         $user = User::create([
-            'name'              => 'User',
+            'name'              => 'Warga',
             'phone'             => '85767113554',
-            'username'          => 'user',
+            'username'          => 'Warga',
             'email'             => 'user@test.com',
             'password'          => bcrypt('password'),
             'email_verified_at' => now(),

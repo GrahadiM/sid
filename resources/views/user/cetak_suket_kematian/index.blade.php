@@ -8,11 +8,9 @@
 <body>
     <center>
 
-        <h2>PEMERINTAH KABUPATEN PERCONTOHAN</h2>
-        <h3>
-            KECAMATAN PERCONTOHAN
-            <br>
-            DESA PERCONTOHAN
+        <h2>PEMERINTAHAN KABUPATEN TAPANULI UATARA</h2>
+        <h3>KECAMATAN SIMANGUMBAN
+            <br>DESA AEK NABARA
         </h3>
         <p>________________________________________________________________________</p>
 
@@ -20,22 +18,22 @@
 
     <center>
         <h4>
-            <u>SURAT KETARANGAN DOMISILI</u>
+            <u>SURAT KETARANGAN MENINGGAL DUNIA</u>
         </h4>
         <h4>
-            No Surat : ...../Ket.Domisili/...../.....
+            No Surat : ...../...../SKMD/...../.....
         </h4>
     </center>
     <p>
         Yang bertandatangan dibawah ini Kepala Desa .............., Kecamatan ............., Kabupaten ............,
-        dengan ini menerangkan bahawa :
+        dengan ini menerangkan dengan sesungguhnya bahwa :
     </P>
     <table>
         <tbody>
             <tr>
                 <td>NIK</td>
                 <td>:</td>
-                <td>{{ (int) $data->nik }}</td>
+                <td>{{ (int)$data->nik }}</td>
             </tr>
             <tr>
                 <td>Nama</td>
@@ -43,30 +41,39 @@
                 <td>{{ Str::ucfirst($data->name) }}</td>
             </tr>
             <tr>
-                <td>Tempat Tanggal Lahir</td>
+                <td>Tanggal Kematian</td>
                 <td>:</td>
-                <td>{{ Str::ucfirst($data->bop) . ' - ' . Carbon\Carbon::parse($data->bod)->isoFormat('D MMMM Y') }}</td>
+                <td>{{ Carbon\Carbon::parse($data->date)->isoFormat('D MMMM Y') }}</td>
+            </tr>
+            <tr>
+                <td>Sebab</td>
+                <td>:</td>
+                <td>{{ Str::ucfirst($data->reason) }}</td>
             </tr>
         </tbody>
     </table>
-    <p>Adalah benar-benar warga Desa ......., Kecamatan ..........., Kabupuaten ..............</P>
-    <p>Demikian Surat ini dibuat, agar dapat digunakan sebagai mana mestinya.</P>
+    <p>Benar-benar telah
+        <b>Meninggal Dunia</b>, pada waktu yang telah disebutkan diatas.
+    </P>
+    <p>Demikian Surat ini dibuat, agar dapat digunakan sebagaimana mestinya.</P>
     <br>
     <br>
     <br>
     <br>
     <br>
     <p align="right">
-        Maju Jaya,
-        21/01/24 <br> KEPALA DESA ...............
+        Aek Nabara, 07 Juli 2023
+        <br>Kepala Desa Aek Nabara
         <br>
         <br>
         <br>
         <br>
         <br>
-        <br>
-        <br>(....................................................)
+        <br> GEMPA TAMBUNAN
+
     </p>
+
+
 
     <script>
         window.print();

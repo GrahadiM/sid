@@ -42,8 +42,8 @@ class DashboardController extends Controller
         $data['recommendation'] = Message::where('category', 'saran')->count();
         $data['penduduk']       = Penduduk::count();
         $data['kk']             = KartuKeluarga::count();
-        $data['lk']             = Penduduk::count();
-        $data['pr']             = Penduduk::count();
+        $data['lk']             = Penduduk::where('gender', 'LK')->count();
+        $data['pr']             = Penduduk::where('gender', 'PR')->count();
         $data['lahir']          = Penduduk::count();
         $data['meninggal']      = Meninggal::count();
         $data['pendatang']      = Pendatang::count();

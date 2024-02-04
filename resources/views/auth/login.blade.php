@@ -36,7 +36,7 @@
                         <div class="col-8">
                             @if (Route::has('register'))
                                 <p class="mb-0">
-                                    <a href="{{ route('register') }}" class="text-center">Register a new membership?</a>
+                                    <a href="{{ route('register') }}" class="text-center">Tambahkan Akun Baru?</a>
                                 </p>
                             @endif
                         </div>
@@ -50,6 +50,18 @@
                 </form>
             </div>
             <!-- /.login-card-body -->
+        </div>
+        <div class="card mt-4">
+            <div class="card-body row">
+                Email : admin@test.com
+                Password : password
+                <br>
+                Email : staff@test.com
+                Password : password
+                <br>
+                Email : user@test.com
+                Password : password
+            </div>
         </div>
     </div>
     <!-- /.login-box -->

@@ -1,13 +1,13 @@
 <?php
 
-namespace App\Http\Controllers\User;
+namespace App\Http\Controllers\Staff;
 
-use App\Models\Message;
+use Illuminate\Support\Str;
 use Illuminate\Http\Request;
+use App\Models\PengajuanSurat;
 use App\Http\Controllers\Controller;
-use Illuminate\Support\Facades\Auth;
 
-class MessageController extends Controller
+class PengajuanSuratController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,10 +16,10 @@ class MessageController extends Controller
      */
     public function index()
     {
-        $data['title']   = 'Kritik & Saran';
-        $data['message'] = Message::where('author_id', Auth::user()->id)->get();
+        $data['title']  = 'Pengajuan Surat';
+        $data['data']   = PengajuanSurat::all();
 
-        return view('user.message.index', $data);
+        return view('staff.submission_letter.index', $data);
     }
 
     /**
@@ -29,9 +29,7 @@ class MessageController extends Controller
      */
     public function create()
     {
-        $data['title']  = 'Kritik & Saran';
-
-        return view('user.message.create', $data);
+        //
     }
 
     /**
@@ -42,15 +40,7 @@ class MessageController extends Controller
      */
     public function store(Request $request)
     {
-        $data               = new Message;
-        $data['title']      = $request->title;
-        $data['desc']       = $request->desc;
-        $data['category']   = $request->category;
-        $data['status']     = 1;
-        $data['author_id']  = Auth::user()->id;
-        $data->save();
-
-        return redirect()->route('user.messages.index');
+        //
     }
 
     /**
@@ -84,7 +74,12 @@ class MessageController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        // dd($request->all());
+        $data           = PengajuanSurat::find($id);
+        $data['status'] = Str::ucfirst($request->status);
+        $data->save();
+
+        return back();
     }
 
     /**

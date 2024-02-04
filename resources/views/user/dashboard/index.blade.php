@@ -3,18 +3,33 @@
 
 {{-- Styles --}}
 @push('style')
-
     <!-- DataTables -->
     <link rel="stylesheet" href="{{ asset('admin') }}/plugins/datatables-bs4/css/dataTables.bootstrap4.min.css">
     <link rel="stylesheet" href="{{ asset('admin') }}/plugins/datatables-responsive/css/responsive.bootstrap4.min.css">
     <link rel="stylesheet" href="{{ asset('admin') }}/plugins/datatables-buttons/css/buttons.bootstrap4.min.css">
-
 @endpush
 
 {{-- Content --}}
 @section('content')
     <h3 class="mb-3">{{ $title }}</h3>
     <div class="row">
+        <div class="col-12">
+            <div class="card">
+                <div class="card-header bg-primary">
+                    <h3 class="text-center"><u>{{ Str::upper('Tentang Desa') }}</u></h3>
+                </div>
+                <div class="card-body">
+                    <h5 class="text-center font-weight-bold">Desa Aek Nabara, Kec. Simangumban, Kab. Tapanuli Utara</h5>
+                    <p>
+                        Desa Aek Nabara adalah nama suatu wilayah dikecamatan Simangumban kabupaten tapanuli utara, menurut
+                        beberapa tokoh masyarakat Desa Aek Nabara bahwa Desa tersebut terbentuk pada tahun 1952 dan pada
+                        saat itu jumlah penduduk ± 96 KK, dan pada saat ini jumlah penduduk desa Aek Nabara terdapat 320 KK.
+                        Adapun nama desa tersebut diputuskan berdasarkan musyawarah yang dipimpin oleh kepala desa dan
+                        diambil nama Desa Aek Nabara.
+                    </p>
+                </div>
+            </div>
+        </div>
         <div class="col-lg-3 col-6">
             <!-- small card -->
             <div class="small-box bg-primary">
@@ -81,7 +96,9 @@
                     <h3 class="text-center"><u>{{ Str::upper('Pengumuman') }}</u></h3>
                 </div>
                 <div class="card-body">
-                    <h5 class="text-center font-weight-bold">{{ $announcement->title }} <span class="text-muted font-weight-normal" style="font-size:12px;">- {{ $announcement->author->name }}</span></h5>
+                    <h5 class="text-center font-weight-bold">{{ $announcement->title }} <span
+                            class="text-muted font-weight-normal" style="font-size:12px;">-
+                            {{ $announcement->author->name }}</span></h5>
                     <p>{!! $announcement->desc !!}</p>
                 </div>
             </div>
@@ -91,7 +108,6 @@
 
 {{-- Script --}}
 @push('scripts')
-
     <!-- DataTables  & Plugins -->
     <script src="{{ asset('admin') }}/plugins/datatables/jquery.dataTables.min.js"></script>
     <script src="{{ asset('admin') }}/plugins/datatables-bs4/js/dataTables.bootstrap4.min.js"></script>
@@ -107,23 +123,22 @@
     <script src="{{ asset('admin') }}/plugins/datatables-buttons/js/buttons.colVis.min.js"></script>
     <!-- Page specific script -->
     <script>
-    $(function () {
-        $("#example1").DataTable({
-            "responsive": true,
-            "lengthChange": true,
-            "autoWidth": false,
-            "buttons": ["excel", "pdf", "print", "colvis"],
-        }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
-        $('#example2').DataTable({
-            "paging": true,
-            "lengthChange": false,
-            "searching": false,
-            "ordering": true,
-            "info": true,
-            "autoWidth": false,
-            "responsive": true,
+        $(function() {
+            $("#example1").DataTable({
+                "responsive": true,
+                "lengthChange": true,
+                "autoWidth": false,
+                "buttons": ["excel", "pdf", "print", "colvis"],
+            }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
+            $('#example2').DataTable({
+                "paging": true,
+                "lengthChange": false,
+                "searching": false,
+                "ordering": true,
+                "info": true,
+                "autoWidth": false,
+                "responsive": true,
+            });
         });
-    });
     </script>
-
 @endpush

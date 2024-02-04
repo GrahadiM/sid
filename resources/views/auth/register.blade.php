@@ -50,7 +50,7 @@
                         <div class="col-8">
                             @if (Route::has('login'))
                                 <p class="mb-0">
-                                    <a href="{{ route('login') }}" class="text-center">Login your account?</a>
+                                    <a href="{{ route('login') }}" class="text-center">Login?</a>
                                 </p>
                             @endif
                         </div>
