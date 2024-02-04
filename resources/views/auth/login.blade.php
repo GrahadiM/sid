@@ -2,7 +2,7 @@
 
 @section('content')
 
-    <div class="login-box" style="color: #000 !important">
+    <div class="login-box mt-2" style="color: #000 !important">
         <div class="login-logo">
             <img src="{{ asset('image/logo.jpg') }}" alt="Logo Desa" class="img-fluid" width="200" height="200">
             <br>
