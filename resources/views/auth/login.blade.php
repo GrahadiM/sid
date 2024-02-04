@@ -2,9 +2,11 @@
 
 @section('content')
 
-    <div class="login-box">
+    <div class="login-box" style="color: #000 !important">
         <div class="login-logo">
-            <a href="{{ url('/') }}" class="font-weight-bold">{{ config('app.name', 'Laravel') }}</a>
+            <img src="{{ asset('image/logo.jpg') }}" alt="Logo Desa" class="img-fluid" width="200" height="200">
+            <br>
+            <a href="{{ url('/') }}" class="font-weight-bold text-black">{{ config('app.name', 'Laravel') }}</a>
         </div>
         <!-- /.login-logo -->
         <div class="card">

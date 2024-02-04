@@ -19,7 +19,7 @@
     <link rel="stylesheet" href="{{ asset('admin') }}/dist/css/adminlte.min.css">
 </head>
 
-<body class="hold-transition {!! Request::is('login') ? 'login-page' : 'register-page' !!}">
+<body class="hold-transition {!! Request::is('login') ? 'login-page' : 'register-page' !!} bg-primary">
 
     @yield('content')
 
